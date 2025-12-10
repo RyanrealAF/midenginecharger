@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerodynamics</title>
+    <title>Aerodynamics & Downforce Strategy</title>
     <!-- Load Inter and Montserrat Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Header with Sticky Navigation -->
+    <!-- Header with Sticky Navigation - Mirroring Index -->
     <header class="header">
         <div class="nav-container">
             <div class="logo"><a href="index.html">PROJECT BLUEPRINT</a></div>
             <nav>
                 <ul class="nav-list">
                     <li><a href="materials.html">Materials</a></li>
-                    <li><a href="aerodynamics.html" class="active">Aero</a></li>
+                    <li><a href="aerodynamics.html" class="active">Aero</a></li> <!-- Active State -->
                     <li><a href="cooling.html">Cooling</a></li>
                     <li><a href="exhaust.html">Exhaust</a></li>
                     <li><a href="suspension.html">Suspension</a></li>
                     <li><a href="drivetrain.html">Drivetrain</a></li>
                 </ul>
             </nav>
-            <!-- Hamburger Menu Toggle -->
-            <button class="menu-toggle" aria-label="Open navigation menu">
-                <span class="hamburger"></span>
-            </button>
         </div>
     </header>
 
     <!-- Main Content Area: Aerodynamics -->
     <main class="main-content">
-        <h1>Aerodynamics</h1>
-        <p>This section details the aerodynamic design and strategy for the vehicle.</p>
+        <h1>Aerodynamics & Downforce Strategy</h1>
+        <p>The primary goal is to achieve an optimal L/D (Lift-to-Drag) ratio, prioritizing high-speed stability and
+            grip without incurring excessive parasitic drag. This section details the computational fluid dynamics (CFD)
+            findings and component specifications.</p>
 
+        <section class="content-module">
+            <h2>Computational Modeling & Targets</h2>
+            <p>Initial CFD simulations target a maximum lift coefficient ($C_L$) of -1.2 at 150 mph, balanced with a
+                minimal increase in the drag coefficient ($C_D$).</p>
+            <ul>
+                <li><strong>Target Downforce:</strong> 450 lbs @ 150 mph.</li>
+                <li><strong>Target $C_D$ Increase:</strong> &lt; 8% over the baseline chassis.</li>
+            </ul>
+            <p>The flow must remain attached across the rear wing element across a 15-degree angle of attack range to
+                ensure stability under braking and corner entry.</p>
+        </section>
+
+        <section class="content-module">
+            <h2>Front Element: Splitter & Canards</h2>
+            <p>The front splitter is constructed from pre-preg carbon fiber (see: <a href="materials.html">Materials</a>
+                for layup details) with a 6-inch projection. This acts as a kinetic boundary layer control device.</p>
+            <h3>Canard Configuration</h3>
+            <p>Dual-element canards are employed to generate strong vortices that manage wheel-well turbulence and feed
+                clean air to the side-skirts. The angle of attack for the primary canard is fixed at 12 degrees.</p>
+            <p>The formula for vortex generation potential $VGP$ is given by:</p>
+            $$
+            VGP = \frac{\rho V^2 A C_L \sin(\alpha)}{2}
+            $$
+            <p>where $\rho$ is air density, $V$ is velocity, $A$ is the canard area, $C_L$ is the lift coefficient, and
+                $\alpha$ is the angle of attack.</p>
+        </section>
+
+        <section class="content-module">
+            <h2>Rear Diffuser Geometry</h2>
+            <p>A low-pressure zone is generated beneath the vehicle using a dual-tunnel diffuser. The critical element
+                is the expansion ratio (ER).</p>
+            <ul>
+                <li><strong>Throat Height:</strong> 80mm</li>
+                <li><strong>Exit Height:</strong> 250mm</li>
+                <li><strong>Expansion Ratio (ER):</strong> 3.125</li>
+            </ul>
+            <p>Proper airflow separation must be maintained at the diffuser exit, preventing flow detachment. We utilize
+                small boundary layer energizers (vanelets) within the tunnels to stabilize flow at high yaw angles.</p>
+
+        </section>
     </main>
-    
+
     <!-- Simple Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Project Blueprint Documentation</p>
+        <p>&copy; 2024 Project Blueprint Documentation</p>
     </footer>
 
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navList = document.querySelector('.nav-list');
-
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-            const isExpanded = navList.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-            menuToggle.classList.toggle('is-active');
-        });
-    </script>
 </body>
+
 </html>
