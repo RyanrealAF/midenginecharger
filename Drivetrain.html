@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivetrain & Power Delivery</title>
+    <!-- Load Inter and Montserrat Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Sticky Navigation - Mirroring Index -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">PROJECT BLUEPRINT</a></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="materials.html">Materials</a></li>
+                    <li><a href="aerodynamics.html">Aero</a></li>
+                    <li><a href="cooling.html">Cooling</a></li>
+                    <li><a href="exhaust.html">Exhaust</a></li>
+                    <li><a href="suspension.html">Suspension</a></li>
+                    <li><a href="drivetrain.html" class="active">Drivetrain</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Menu Toggle -->
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Drivetrain -->
+    <main class="main-content">
+        <h1>Drivetrain & Power Delivery</h1>
+        <p>The drivetrain components are selected and specified to handle peak torque loads while ensuring reliable and efficient power transfer to the wheels. Focus is placed on durability and shift speed.</p>
+
+        <section class="content-module">
+            <h2>Transmission and Clutch</h2>
+            <p>A sequential six-speed gearbox is employed for rapid gear changes. The unit is rated for 1200 Nm of torque. A triple-plate carbon clutch is paired with it for high thermal capacity and engagement consistency.</p>
+        </section>
+
+        <section class="content-module">
+            <h2>Differential and Final Drive</h2>
+            <p>A mechanical limited-slip differential (LSD) with a fixed 4.10 final drive ratio is used. The LSD features a 60/40 ramp angle split for balanced acceleration lockup and deceleration control.</p>
+        </section>
+    </main>
+    
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Project Blueprint Documentation</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const isExpanded = navList.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+            menuToggle.classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>

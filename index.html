@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Tech Hub - Blueprint & Index</title>
+    <!-- Load Inter and Montserrat Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Sticky Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">PROJECT BLUEPRINT</a></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="materials.html">Materials</a></li>
+                    <li><a href="aerodynamics.html">Aero</a></li>
+                    <li><a href="cooling.html">Cooling</a></li>
+                    <li><a href="exhaust.html">Exhaust</a></li>
+                    <li><a href="suspension.html">Suspension</a></li>
+                    <li><a href="drivetrain.html">Drivetrain</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Menu Toggle -->
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <h1>Project Blueprint Index: Core Systems</h1>
+        <p>This hub serves as the central index for the in-depth technical documentation. Each section is a modular document covering the theory, component selection, and implementation strategy for a critical vehicle system.</p>
+
+        <!-- Index/Overview Section -->
+        <section class="content-module">
+            <h2>System Modules</h2>
+            <p>Use the links below or the navigation bar above to explore each specific area.</p>
+            
+            <ul class="module-list">
+                <li><a href="materials.html"><strong>Materials & Construction:</strong></a> Selection criteria for chassis, body, and high-stress components.</li>
+                <li><a href="aerodynamics.html"><strong>Aerodynamics:</strong></a> Managing airflow for downforce, drag reduction, and stability.</li>
+                <li><a href="cooling.html"><strong>Cooling & Thermal Management:</strong></a> Strategies for engine, oil, brakes, and intercooler efficiency.</li>
+                <li><a href="exhaust.html"><strong>Exhaust System:</strong></a> Optimizing gas flow, back pressure, and acoustic tuning.</li>
+                <li><a href="suspension.html"><strong>Suspension & Chassis:</strong></a> Geometry, damping, spring rates, and kinematic principles.</li>
+                <li><a href="drivetrain.html"><strong>Drivetrain & Power Delivery:</strong></a> Transmission, differential, axle selection, and torque management.</li>
+            </ul>
+        </section>
+
+        <!-- Design Doctrine Summary (Optional but good for theme) -->
+        <section class="content-module">
+            <h2>The Doctrine of Dark Elegance</h2>
+            <p>Every component choice and system integration is filtered through this doctrine: efficiency, stealth, and measured intent. Components must earn their place. This documentation reflects that commitment to clean, high-contrast, and actionable information.</p>
+        </section>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Project Blueprint Documentation</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const isExpanded = navList.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+            menuToggle.classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>

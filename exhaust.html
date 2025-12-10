@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhaust System Design</title>
+    <!-- Load Inter and Montserrat Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Sticky Navigation - Mirroring Index -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">PROJECT BLUEPRINT</a></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="materials.html">Materials</a></li>
+                    <li><a href="aerodynamics.html">Aero</a></li>
+                    <li><a href="cooling.html">Cooling</a></li>
+                    <li><a href="exhaust.html" class="active">Exhaust</a></li>
+                    <li><a href="suspension.html">Suspension</a></li>
+                    <li><a href="drivetrain.html">Drivetrain</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Menu Toggle -->
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Exhaust -->
+    <main class="main-content">
+        <h1>Exhaust System Design & Tuning</h1>
+        <p>The exhaust system is designed to maximize gas velocity and scavenging, which directly impacts engine volumetric efficiency and turbocharger spool time. Material selection is based on heat and corrosion resistance.</p>
+
+        <section class="content-module">
+            <h2>Header and Downpipe Geometry</h2>
+            <p>The exhaust manifold uses an equal-length, 4-into-1 collector design, constructed from T304 stainless steel. Primary runner diameter is 1.75 inches, and the secondary/downpipe is 3.5 inches. This geometry is optimized for peak torque delivery in the 4500 rpm to 6500 rpm range.</p>
+        </section>
+
+        <section class="content-module">
+            <h2>Acoustics and Flow Control</h2>
+            <p>A high-flow catalytic converter is positioned post-turbocharger. A valved muffler system allows for dynamic adjustment of back pressure and acoustic signature, controlled by the ECU based on throttle position and engine load.</p>
+        </section>
+    </main>
+    
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Project Blueprint Documentation</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const isExpanded = navList.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+            menuToggle.classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>

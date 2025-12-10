@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suspension & Chassis Geometry</title>
+    <!-- Load Inter and Montserrat Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Sticky Navigation - Mirroring Index -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">PROJECT BLUEPRINT</a></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="materials.html">Materials</a></li>
+                    <li><a href="aerodynamics.html">Aero</a></li>
+                    <li><a href="cooling.html">Cooling</a></li>
+                    <li><a href="exhaust.html">Exhaust</a></li>
+                    <li><a href="suspension.html" class="active">Suspension</a></li>
+                    <li><a href="drivetrain.html">Drivetrain</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Menu Toggle -->
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Suspension -->
+    <main class="main-content">
+        <h1>Suspension & Chassis Geometry</h1>
+        <p>The suspension system is a critical link between the chassis and the road surface. Design objectives focus on controlling wheel motion, managing load transfer, and optimizing tire contact patch.</p>
+
+        <section class="content-module">
+            <h2>Kinematic Design: Double Wishbone</h2>
+            <p>A fully adjustable double wishbone setup is utilized at all four corners. The geometry is tuned to minimize camber change during bump and rebound, maintaining a nearly constant instantaneous center of rotation to control roll center height.</p>
+        </section>
+
+        <section class="content-module">
+            <h2>Springs, Dampers, and Anti-Roll</h2>
+            <p>Three-way adjustable coil-over dampers are specified, allowing independent control over low-speed compression, high-speed compression, and rebound. Spring rates are 14 kg/mm front and 12 kg/mm rear. The anti-roll bars are adjustable to fine-tune the vehicle's yaw response.</p>
+        </section>
+    </main>
+    
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Project Blueprint Documentation</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const isExpanded = navList.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+            menuToggle.classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>

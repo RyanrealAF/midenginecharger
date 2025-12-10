@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooling & Thermal Management</title>
+    <!-- Load Inter and Montserrat Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Sticky Navigation - Mirroring Index -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">PROJECT BLUEPRINT</a></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="materials.html">Materials</a></li>
+                    <li><a href="aerodynamics.html">Aero</a></li>
+                    <li><a href="cooling.html" class="active">Cooling</a></li>
+                    <li><a href="exhaust.html">Exhaust</a></li>
+                    <li><a href="suspension.html">Suspension</a></li>
+                    <li><a href="drivetrain.html">Drivetrain</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Menu Toggle -->
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Cooling -->
+    <main class="main-content">
+        <h1>Cooling & Thermal Management</h1>
+        <p>Effective thermal management is crucial for maintaining engine longevity and performance stability, particularly under high-load conditions. This system addresses coolant, oil, and charged air temperatures.</p>
+
+        <section class="content-module">
+            <h2>Fluid Cooling Strategy</h2>
+            <p>A dual-pass radiator configuration is used, maximized to fill the available frontal area. Engine coolant flow is regulated by an electric water pump for precise temperature control, targeting an optimal operating range of 90°C to 95°C.</p>
+        </section>
+
+        <section class="content-module">
+            <h2>Oil and Charge-Air Heat Exchangers</h2>
+            <p>Dedicated plate-and-fin oil coolers are mounted in a less turbulent zone for efficient heat rejection. A large, air-to-air intercooler with a bar-and-plate core design is specified to maintain intake air temperatures (IAT) below 45°C at maximum boost.</p>
+        </section>
+    </main>
+    
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Project Blueprint Documentation</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const isExpanded = navList.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+            menuToggle.classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>
